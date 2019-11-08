@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+import GlobalStyle from './style/Global';
 import Card from './components/Card';
 import Apod from './components/Apod';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   const [data, setData] = useState([]);
@@ -17,10 +20,14 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
-      <p>WHADDUP YO!!!🚀!</p>
-      <Apod />
-    </div>
+    <>
+      <GlobalStyle />
+      <div className='App'>
+        <Header />
+        <Apod />
+        <Footer />
+      </div>
+    </>
   );
 }
 
