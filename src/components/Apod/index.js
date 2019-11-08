@@ -1,13 +1,13 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import Date from '../Date';
 
-export default function Apod({ data}){
-  return(
+export default function Apod({ data }) {
+  return (
     <div>
-      <Date date={date}/>
+      <Date date={date} />
       <h2>{data.title}</h2>
-      <img src {data.hdurl} alt={data.title}/>
+      <img src={data.hdurl} alt={data.title} />
       <h3>{data.explanation}</h3>
     </div>
-  )
+  );
 }
