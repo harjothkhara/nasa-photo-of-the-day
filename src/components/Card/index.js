@@ -5,14 +5,14 @@ export default function Card({ data }) {
   return (
     <div>
       <h2>Card</h2>
-      {data.map(info => {
+      {data.map(info => (
         <Fragment key={info.id}>
           <img
             src={info.img_src}
             alt={`${info.camera.full_name} ${info.rover.name} ${info.earth.date}`}
           />
-        </Fragment>;
-      })}
+        </Fragment>
+      ))}
     </div>
   );
 }

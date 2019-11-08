@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React, { Fragment } from 'react';
 
-export default function Date({ data }) {
-  const [date, setDate] = useState('');
-
+export default function DateSelector({ days, date, setDate }) {
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -14,11 +12,11 @@ export default function Date({ data }) {
   return (
     <form onSubmit={handleSubmit}>
       <select onChange={handleChange}>
-        <option value='2019-11-07'>2019-11-07</option>
-        <option value='2019-11-06'>2019-11-06</option>
-        <option value='2019-11-05'>2019-11-05</option>
-        <option value='2019-11-04'>2019-11-04</option>
-        <option value='2019-11-03'>2019-11-03</option>
+        {days.map((day, i) => (
+          <Fragment key={`${i}-${day}`}>
+            <option defaultValue={day}>{day}</option>
+          </Fragment>
+        ))}
       </select>
     </form>
   );
